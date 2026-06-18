@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rimon Hamo - CS 499 ePortfolio</title>
+    <!-- Professional Modern CSS Theme -->
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         body {
@@ -12,21 +13,99 @@
             max-width: 980px;
             margin: 0 auto;
             padding: 45px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
         }
-        @media (max-width: 767px) {
-            body { padding: 15px; }
+        .artifact-box {
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f6f8fa;
         }
+        .download-btn {
+            display: inline-block;
+            background-color: #2ea44f;
+            color: white !important;
+            padding: 8px 16px;
+            font-weight: 600;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+        .download-btn:hover { background-color: #2c974b; }
+        .secondary-btn { background-color: #24292f; }
+        .secondary-btn:hover { background-color: #57606a; }
+        @media (max-width: 767px) { body { padding: 15px; } }
     </style>
 </head>
 <body class="markdown-body">
-    <div id="content">Loading Portfolio...</div>
-    <script src="https://jsdelivr.net"></script>
-    <script>
-        fetch('README.md')
-            .then(response => response.text())
-            .then(text => {
-                document.getElementById('content').innerHTML = marked.parse(text);
-            });
-    </script>
+
+    <h1>CS 499 Computer Science ePortfolio</h1>
+    <p><strong>Student:</strong> Rimon Hamo<br>
+    <strong>Aspiration:</strong> Mobile Software Engineer<br>
+    <strong>Institution:</strong> Southern New Hampshire University</p>
+
+    <hr>
+
+    <h2>👔 Professional Self-Assessment</h2>
+    
+    <h3>Introduction & Career Alignment</h3>
+    <p>My professional objective is to operate as a Mobile Software Engineer specializing in high-performance health, fitness, and wellness applications. Throughout my computer science journey at SNHU, I have integrated industry-standard architectural frameworks and security practices to deliver responsive, user-centric mobile solutions. This portfolio represents my evolutionary growth, showcasing a transition from structural programming paradigms to secure, decoupled, and algorithmically efficient software architectures.</p>
+
+    <h3>Architectural Strategy & Collaborative Engineering</h3>
+    <p>In modern software development, delivering high-quality solutions requires choosing structures that can adapt to changing demands while remaining easy for teams to maintain. My capstone work highlights this by taking a legacy application and completely separating its responsibilities using the Model-View-ViewModel (MVVM) pattern. Moving code out of monolithic blocks makes it easier for multiple developers to work together on different features without creating merge conflicts, improving team collaboration and efficiency.</p>
+
+    <h3>Algorithmic Optimization & Trade-off Management</h3>
+    <p>Writing efficient code requires analyzing how data structures perform under strict memory and hardware limitations. For mobile platforms, calculations must run fast without draining the battery or overheating the device. My work addresses this by moving data processing away from slow cloud endpoints directly onto the local hardware (Mobile Edge Computing). By utilizing ordered TreeMap collections and linear regression algorithms, the application processes real-time user metrics instantly on-device while maintaining optimal memory performance.</p>
+
+    <h3>Security Mindset & Data Privacy</h3>
+    <p>As mobile applications handle increasingly sensitive user health records, security must be built directly into the codebase rather than treated as a network configuration after-thought. Adopting a Zero-Trust architecture means verifying all data locally and assuming the operating environment may be compromised. I implemented this by replacing open cleartext data paths with compiled, type-safe database migrations and applying robust cryptographic hashing (BCrypt) to protect local user records from unauthorized extraction or physical hardware harvesting.</p>
+
+    <hr>
+
+    <h2>📽️ Informal Code Review Video</h2>
+    <p>🎥 <a href="PASTE_YOUR_VIDEO_URL_HERE" target="_blank" style="font-weight: bold; font-size: 16px;">Click Here to Watch My Module Two Code Review Video Walkthrough</a></p>
+    <p><em>Description:</em> A detailed structural analysis reviewing the legacy baseline code line-by-line to outline the engineering vulnerabilities and enhancement strategies.</p>
+
+    <hr>
+
+    <h2>🛠️ Artifact Enhancements (CS360 Android Weight Tracker)</h2>
+
+    <div class="artifact-box">
+        <h3>1. Software Design & Engineering</h3>
+        <p><strong>Artifact Source:</strong> CS360 Mobile Architecture and Programming</p>
+        <p><strong>Summary:</strong> Refactored un-optimized Activity code blocks into modular MVVM components utilizing clean repositories, explicit background thread executors, ViewBinding, and lifecycle-aware LiveData streams.</p>
+        <a href="./original_weight_tracker.zip" class="download-btn secondary-btn">📥 Download Original Code</a>
+        <a href="./enhanced_weight_tracker.zip" class="download-btn">📥 Download Enhanced Code</a>
+    </div>
+
+    <div class="artifact-box">
+        <h3>2. Algorithms & Data Structures</h3>
+        <p><strong>Artifact Source:</strong> CS360 Mobile Architecture and Programming</p>
+        <p><strong>Summary:</strong> Implemented an on-device "Trends & Insights" forecasting core utilizing Linear Regression models and multi-day moving averages backed by an ordered TreeMap collection to achieve efficient O(log N) processing speeds.</p>
+        <a href="./original_weight_tracker.zip" class="download-btn secondary-btn">📥 Download Original Code</a>
+        <a href="./enhanced_weight_tracker.zip" class="download-btn">📥 Download Enhanced Code</a>
+    </div>
+
+    <div class="artifact-box">
+        <h3>3. Databases & Security</h3>
+        <p><strong>Artifact Source:</strong> CS360 Mobile Architecture and Programming</p>
+        <p><strong>Summary:</strong> Upgraded cleartext SQLite calls into the modern Android Jetpack Room ORM framework with strict compiled schemas, relational foreign keys, and secure BCrypt cryptographic password hashing.</p>
+        <a href="./original_weight_tracker.zip" class="download-btn secondary-btn">📥 Download Original Code</a>
+        <a href="./enhanced_weight_tracker.zip" class="download-btn">📥 Download Enhanced Code</a>
+    </div>
+
+    <hr>
+
+    <h3>📄 Supporting Documentation</h3>
+    <p>Download the full academic narratives detailing the step-by-step breakdown of challenges overcome, trade-offs analyzed, and grading rubrics met for each milestone submission.</p>
+    <a href="./narratives.zip" class="download-btn" style="background-color: #0056b3;">📁 Download All Narrative Documents (.zip)</a>
+
+    <hr>
+
+    <h3>AI Acknowledgment</h3>
+    <p><em>I used generative AI assistance to optimize sentence structure, polish professional technical wording, and correct grammar layout throughout my portfolio narratives and self-assessment text. All underlying concepts, architectural designs, programmatic strategies, code snippets, and reflections are entirely my own original work.</em></p>
+
 </body>
 </html>

@@ -2,7 +2,7 @@
 **Student:** Rimon Hamo  
 **Aspiration:** Mobile Software Engineer  
 **Institution:** Southern New Hampshire University  
-**Live Site URL:** https://github.io
+**Live Site URL:** [https://github.io](https://rayhamo98.github.io/CS-499-ePortfolio/)
 
 ---
 

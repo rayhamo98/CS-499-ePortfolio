@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rimon Hamo - CS 499 ePortfolio</title>
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+        @media (max-width: 767px) {
+            body { padding: 15px; }
+        }
+    </style>
+</head>
+<body class="markdown-body">
+    <div id="content">Loading Portfolio...</div>
+    <script src="https://jsdelivr.net"></script>
+    <script>
+        fetch('README.md')
+            .then(response => response.text())
+            .then(text => {
+                document.getElementById('content').innerHTML = marked.parse(text);
+            });
+    </script>
+</body>
+</html>

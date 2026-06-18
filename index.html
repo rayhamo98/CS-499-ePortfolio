@@ -3,48 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rimon Hamo - CS 499 ePortfolio</title>
-    <!-- Professional Modern CSS Theme -->
-    <link rel="stylesheet" href="https://cloudflare.com">
+    <title>Rimon Hamo - Space Core ePortfolio</title>
     <style>
+        /* Deep Space Dynamic Background */
         body {
+            background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
+            color: #e2e8f0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
             box-sizing: border-box;
-            min-width: 200px;
-            max-width: 980px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Pure CSS Animated Twinkling Starfield Layout */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
+            background-size: 550px 550px, 350px 350px, 250px 250px;
+            background-position: 0 0, 40px 60px, 130px 270px;
+            z-index: -1;
+            opacity: 0.6;
+            animation: starTwinkle 120s linear infinite;
+        }
+
+        @keyframes starTwinkle {
+            from { background-position: 0 0, 40px 60px, 130px 270px; }
+            to { background-position: 550px 1100px, 700px 700px, 500px 1080px; }
+        }
+
+        .container {
+            max-width: 900px;
             margin: 0 auto;
-            padding: 45px;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background: rgba(15, 23, 42, 0.75);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(56, 189, 248, 0.05);
         }
+
+        /* Cyberpunk Header */
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(to right, #38bdf8, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-top: 0;
+            letter-spacing: -0.05em;
+            text-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
+        }
+
+        h2 {
+            color: #38bdf8;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            padding-bottom: 8px;
+            margin-top: 40px;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        h3 { color: #f1f5f9; font-size: 1.2rem; margin-top: 0; }
+        p { line-height: 1.7; color: #cbd5e1; font-size: 1.05rem; }
+        hr { border: none; border-top: 1px solid rgba(56, 189, 248, 0.15); margin: 30px 0; }
+
+        /* Futuristic Glassmorphism Artifact Cards */
         .artifact-box {
-            border: 1px solid #d0d7de;
-            border-radius: 6px;
-            padding: 20px;
-            margin-bottom: 20px;
-            background-color: #f6f8fa;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-left: 4px solid #38bdf8;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
+        .artifact-box:hover {
+            transform: translateY(-4px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(56, 189, 248, 0.1);
+        }
+
+        .artifact-box:nth-child(even) { border-left-color: #a855f7; }
+        .artifact-box:nth-child(even):hover { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(168, 85, 247, 0.1); }
+
+        /* Neon Static & Glowing Interactive Buttons */
         .download-btn {
-            display: inline-block;
-            background-color: #2ea44f;
-            color: white !important;
-            padding: 8px 16px;
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: #ffffff !important;
+            padding: 10px 20px;
             font-weight: 600;
-            border-radius: 6px;
+            border-radius: 8px;
             text-decoration: none;
-            margin-right: 10px;
-            font-size: 14px;
+            margin-right: 12px;
+            margin-top: 10px;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .download-btn:hover { background-color: #2c974b; }
-        .secondary-btn { background-color: #24292f; }
-        .secondary-btn:hover { background-color: #57606a; }
-        @media (max-width: 767px) { body { padding: 15px; } }
+
+        .download-btn:hover {
+            background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+            transform: scale(1.02);
+        }
+
+        .secondary-btn {
+            background: linear-gradient(135deg, #475569 0%, #334155 100%);
+            box-shadow: 0 4px 12px rgba(71, 85, 105, 0.3);
+        }
+
+        .secondary-btn:hover {
+            background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+            box-shadow: 0 0 20px rgba(100, 116, 139, 0.4);
+        }
+
+        .video-box {
+            background: rgba(168, 85, 247, 0.06);
+            border: 1px dashed rgba(168, 85, 247, 0.4);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .video-link {
+            color: #c084fc !important;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            text-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+        }
+        .video-link:hover { color: #e9d5ff !important; text-decoration: underline; }
+
+        .meta-text { color: #94a3b8; font-size: 0.95rem; margin-bottom: 5px; }
+        .meta-text strong { color: #f1f5f9; }
+
+        @media (max-width: 767px) {
+            .container { padding: 20px; }
+            h1 { font-size: 1.9rem; }
+            body { padding: 20px 10px; }
+        }
     </style>
 </head>
-<body class="markdown-body">
+<body>
 
+<div class="container">
     <h1>CS 499 Computer Science ePortfolio</h1>
-    <p><strong>Student:</strong> Rimon Hamo<br>
-    <strong>Aspiration:</strong> Mobile Software Engineer<br>
-    <strong>Institution:</strong> Southern New Hampshire University</p>
+    <p class="meta-text"><strong>Student:</strong> Rimon Hamo</p>
+    <p class="meta-text"><strong>Aspiration:</strong> Mobile Software Engineer</p>
+    <p class="meta-text"><strong>Institution:</strong> Southern New Hampshire University</p>
 
     <hr>
 
@@ -65,8 +183,10 @@
     <hr>
 
     <h2>📽️ Informal Code Review Video</h2>
-    <p>🎥 <a href="PASTE_YOUR_VIDEO_URL_HERE" target="_blank" style="font-weight: bold; font-size: 16px;">Click Here to Watch My Module Two Code Review Video Walkthrough</a></p>
-    <p><em>Description:</em> A detailed structural analysis reviewing the legacy baseline code line-by-line to outline the engineering vulnerabilities and enhancement strategies.</p>
+    <div class="video-box">
+        <a href="PASTE_YOUR_VIDEO_URL_HERE" target="_blank" class="video-link">🚀 Click Here to Launch My Code Review Video Walkthrough</a>
+        <p style="margin-bottom:0; margin-top:10px; font-size:0.95rem; color:#94a3b8;">A detailed structural analysis reviewing the legacy baseline code line-by-line to outline engineering vulnerabilities and enhancement blueprints.</p>
+    </div>
 
     <hr>
 
@@ -74,38 +194,12 @@
 
     <div class="artifact-box">
         <h3>1. Software Design & Engineering</h3>
-        <p><strong>Artifact Source:</strong> CS360 Mobile Architecture and Programming</p>
-        <p><strong>Summary:</strong> Refactored un-optimized Activity code blocks into modular MVVM components utilizing clean repositories, explicit background thread executors, ViewBinding, and lifecycle-aware LiveData streams.</p>
-        <a href="./original_weight_tracker.zip" class="download-btn secondary-btn">📥 Download Original Code</a>
-        <a href="./enhanced_weight_tracker.zip" class="download-btn">📥 Download Enhanced Code</a>
+        <p><strong>Source Framework:</strong> CS360 Mobile Architecture and Programming</p>
+        <p>Refactored un-optimized Activity code blocks into modular MVVM components utilizing clean repositories, explicit background thread executors, ViewBinding, and lifecycle-aware LiveData streams.</p>
+        <a href="./original_weight_tracker.zip" class="download-btn secondary-btn">📥 Legacy ZIP</a>
+        <a href="./enhanced_weight_tracker.zip" class="download-btn">📥 Enhanced System</a>
     </div>
 
     <div class="artifact-box">
         <h3>2. Algorithms & Data Structures</h3>
-        <p><strong>Artifact Source:</strong> CS360 Mobile Architecture and Programming</p>
-        <p><strong>Summary:</strong> Implemented an on-device "Trends & Insights" forecasting core utilizing Linear Regression models and multi-day moving averages backed by an ordered TreeMap collection to achieve efficient O(log N) processing speeds.</p>
-        <a href="./original_weight_tracker.zip" class="download-btn secondary-btn">📥 Download Original Code</a>
-        <a href="./enhanced_weight_tracker.zip" class="download-btn">📥 Download Enhanced Code</a>
-    </div>
-
-    <div class="artifact-box">
-        <h3>3. Databases & Security</h3>
-        <p><strong>Artifact Source:</strong> CS360 Mobile Architecture and Programming</p>
-        <p><strong>Summary:</strong> Upgraded cleartext SQLite calls into the modern Android Jetpack Room ORM framework with strict compiled schemas, relational foreign keys, and secure BCrypt cryptographic password hashing.</p>
-        <a href="./original_weight_tracker.zip" class="download-btn secondary-btn">📥 Download Original Code</a>
-        <a href="./enhanced_weight_tracker.zip" class="download-btn">📥 Download Enhanced Code</a>
-    </div>
-
-    <hr>
-
-    <h3>📄 Supporting Documentation</h3>
-    <p>Download the full academic narratives detailing the step-by-step breakdown of challenges overcome, trade-offs analyzed, and grading rubrics met for each milestone submission.</p>
-    <a href="./narratives.zip" class="download-btn" style="background-color: #0056b3;">📁 Download All Narrative Documents (.zip)</a>
-
-    <hr>
-
-    <h3>AI Acknowledgment</h3>
-    <p><em>I used generative AI assistance to optimize sentence structure, polish professional technical wording, and correct grammar layout throughout my portfolio narratives and self-assessment text. All underlying concepts, architectural designs, programmatic strategies, code snippets, and reflections are entirely my own original work.</em></p>
-
-</body>
-</html>
+        <p><strong>Source Framework:</strong> CS360 Mobile Architecture and Programming</p>
